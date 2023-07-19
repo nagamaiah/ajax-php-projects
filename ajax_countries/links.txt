@@ -1,0 +1,7 @@
+
+http://localhost/ajax_countries/get_all_countries.php
+
+http://localhost/ajax_countries/get_state.php?country_id=
+
+http://localhost/ajax_countries/get_city.php?state_id=
+

@@ -1,0 +1,17 @@
+[
+    {
+        "name":"man",
+        "age":23,
+        "martialStatus": true        
+    },
+    {
+        "name":"kun",
+        "age":24,
+        "martialStatus": false    
+    },
+    {    
+        "name":"jon",
+        "age":25,
+        "martialStatus": true 
+    }
+]

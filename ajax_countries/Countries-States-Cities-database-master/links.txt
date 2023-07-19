@@ -1,0 +1,22 @@
+
+https://github.com/hiiamrohit/Countries-States-Cities-database
+
+
+part1:
+	In This video I have shown that How to get JSON Response from mysql database using PHP. In php a one function 
+is there to convert data into JSON Format json_encode()
+using json_encode() method we can convert php array into json array
+
+
+
+
+
+
+
+part2 :
+		In this video I have show how to load data in the background using ajax call. 
+		In this video I am getting data in the form of JSON array using JSON.parse() method I am paring that data into 
+		javascript object and using forEach() method I am getting all the the element of array one by one in call back 
+	function and then I am creating dynamic element(option) using document.createElement()
+	and then append name to innerText and setting value as country id so that we can use that id to get all 
+	the state list of that particular country id similary I use state id to get the city detail of that particular state 

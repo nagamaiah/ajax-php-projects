@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Pra</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+            <h3>Hello Ajax</h3>
+            <div id="loaddata">This is going to be change</div>
+            <button class="btn btn-success" id="btnclick">Click</button>
+
+            <h3> XMLHttpRequest </h3>
+
+            <div id="changedata">This is going to be change</div>
+            <button class="btn btn-primary" onclick="myFun()">Button</button>
+
+            <div>
+                <p id="changehere">This will going to be CHANGE</p>
+                <button class="btn btn-primary btnclik " >Click Here</button>
+            </div>
+
+            <div>
+                <p id="changepost">This will going to be CHANGE</p>
+                <button class="btn btn-primary"  id="btnclik" >Click Here</button>
+            </div>
+    </div>
+
+
+
+    <script>
+            
+        // AJAX usig javascript.....//
+           function myFun(){
+                var req = new XMLHttpRequest();
+                req.open('GET','load2.html',true);
+                req.send();
+                req.onreadystatechange = function(){
+                    if(req.readyState == 4 && req.status == 200){
+                        document.getElementById('changedata').innerHTML = req.responseText;
+                    }
+                }
+            }
+
+
+         // AJAX using Jquery ......///
+
+            $(document).ready(function(){
+                $('#btnclick').click(function(){
+                    $('#loaddata').load('load.html', function(){
+                        alert('Successfully done');
+                    });
+                });
+            });
+
+            $(document).ready(function(){
+                $('.btnclik').click(function(){
+                    $.get('get.html', function(data, status){
+                        $('#changehere').html(data);
+                        alert(status);
+                    });
+                });
+            });
+
+            $(document).ready(function(){
+                $('#btnclik').click(function(){
+                    $.post('post.php', {
+                        name : "Nag",
+                        sub : "Subject"
+
+                    }, function(data, status){
+                        $('#changepost').html(data);
+                        alert(status);
+                    });
+                });
+            });
+
+            
+
+
+
+        
+    </script>
+
+</body>
+</html>
